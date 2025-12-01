@@ -13,6 +13,8 @@ func TestGetAPIKey(t *testing.T) {
 	header2 := http.Header{}
 	header3 := http.Header{}
 	header3.Set("Authorization", "api_key "+token_str)
+	header4 := http.Header{}
+	header4.Set("Authorization", "ApiKey")
 
 	tests := []struct {
 		name      string
@@ -35,6 +37,12 @@ func TestGetAPIKey(t *testing.T) {
 		{
 			name:      "Malformed authorization header",
 			header:    header3,
+			wantToken: "",
+			wantErr:   true,
+		},
+		{
+			name:      "Missing API Key",
+			header:    header4,
 			wantToken: "",
 			wantErr:   true,
 		},
