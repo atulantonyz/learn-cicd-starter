@@ -39,4 +39,4 @@ jobs:
       - name: Linting check
         uses: dominikh/staticcheck-action@v1
         with:
-        version: "latest"
+          version: "latest"
