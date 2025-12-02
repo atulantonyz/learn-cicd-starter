@@ -27,6 +27,7 @@ func unused() {
 	// this function does nothing
 	// and is called nowhere
 }
+
 func main() {
 	err := godotenv.Load(".env")
 	if err != nil {
